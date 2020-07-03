@@ -32,11 +32,9 @@ SECRET_KEY = config('SECRET_KEY')
 # DEBUG = config('DEBUG', cast=bool)
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ['curso-django3.herokuapp.com','localhost:8000']
-# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
-
+ALLOWED_HOSTS = ['*', 'https://meusite2020.herokuapp.com']
+# https://meusite2020.herokuapp.com/ | https://git.heroku.com/meusite2020.git
+# ALLOWED_HOSTS = ['*','https://mysite1.herokuapp.com']
 
 # Application definition
 
@@ -162,4 +160,3 @@ EMAIL_HOST_PASSWORD = '3ce8b57fa9a797'
 EMAIL_PORT = '2525'
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# django_heroku.settings(locals())

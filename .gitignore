@@ -3,9 +3,4 @@
 *pyc
 .DS_Store
 media
-*.pyc
-*~
-__pycache__
-venv
-db.sqlite3
-/static
+

@@ -12,9 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from decouple import config, Csv
-#from dj_database_url import parse as dburl
-
-
+from dj_database_url import parse as dburl
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -25,16 +23,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'npot1^%8jb)!n6uc2&59w)p+djzf(b+&2x!8)ukm+74%cjyki='
-# SECRET_KEY = config('SECRET_KEY')
+# SECRET_KEY = 'npot1^%8jb)!n6uc2&59w)p+djzf(b+&2x!8)ukm+74%cjyki='
+SECRET_KEY = config('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 # DEBUG = config('DEBUG', cast=bool)
-# DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+ALLOWED_HOSTS = []
 # ALLOWED_HOSTS = ['curso-django3.herokuapp.com','localhost:8000']
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
@@ -89,15 +87,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'meu_site.wsgi.application'
 
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-}
+}"""
 
-#default_dburl = 'sqlite:////'+os.path.join(BASE_DIR,'db.sqlite3')
-#DATABASES = {'default':config('DATABASE_URL', default=default_dburl, cast=dburl),}
+default_dburl = 'sqlite:////'+os.path.join(BASE_DIR,'db.sqlite3')
+DATABASES = {'default':config('DATABASE_URL', default=default_dburl, cast=dburl),}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

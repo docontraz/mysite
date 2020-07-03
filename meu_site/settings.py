@@ -164,6 +164,4 @@ EMAIL_HOST_PASSWORD = '3ce8b57fa9a797'
 EMAIL_PORT = '2525'
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-# Activate Django-Heroku.
 # django_heroku.settings(locals())
